@@ -19,6 +19,12 @@ employees.filter(emp => emp.dept === 'accounts').map(emp => ({
   ...emp, dept: emp.dept.toUpperCase()
 }));
 
+// To get departmnet wise employee count
+employees.reduce((acc, value) => {
+  acc[value.dept] = acc[value.dept] === undefined ? 1 : acc[value.dept] + 1;
+  return acc;
+}, {});
+
 // To get all employees whose salary is more than 40000
 // To get all employees whose salary is more than 40000 and working in accounts dept
 
